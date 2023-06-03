@@ -9,6 +9,11 @@ public class UI_Button : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+        public void credits()
+    {
+        SceneManager.LoadScene(2);
+    }
+    
 
     public void QuitGame()
     {
