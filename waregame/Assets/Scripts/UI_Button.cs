@@ -11,9 +11,22 @@ public class UI_Button : MonoBehaviour
     }
         public void credits()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
-    
+
+        public void Options()
+    {
+        SceneManager.LoadScene(4);
+    }    
+        public void HowToPlay()
+    {
+        SceneManager.LoadScene(5);
+    }    
+
+        public void back()
+    {
+        SceneManager.LoadScene(0);
+    }    
 
     public void QuitGame()
     {
