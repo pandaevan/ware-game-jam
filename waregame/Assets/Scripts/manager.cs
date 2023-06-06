@@ -14,6 +14,9 @@ public class manager : MonoBehaviour
   public bool isworking;
   public bool iswatching;
   public Slider bored;
+  public int bossspawntimer;
+  public bool bossactive;
+  public float timePassed;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +27,15 @@ public class manager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    { 
+      
+       timePassed += Time.deltaTime;
+    if(timePassed > bossspawntimer)
     {
+        timePassed = 0;
+        bruv();
+    } 
+      bossrange();
       bored.value = currentboredom;
         IsWorkingToggle();
         if (isworking && !iswatching)
@@ -47,4 +58,18 @@ public class manager : MonoBehaviour
             isworking = !isworking;
         }
     }
+    public void bossrange()
+    {
+      if(bossactive == false)
+      {
+        bossspawntimer = Random.Range(10,30);
+        bossactive = !bossactive;
+        Debug.Log(bossactive);
+      }
+    }
+          public void bruv()
+      {
+       Debug.Log("active");
+       bossactive = false;
+      }
 }
