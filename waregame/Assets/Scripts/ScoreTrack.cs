@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ScoreTrack : MonoBehaviour
 {
-public int Score = 0;
+public float Score = 0;
 public void FixedUpdate()
 {
-    Score = Score + 1;
+    Score += Time.deltaTime;;
 }
 }

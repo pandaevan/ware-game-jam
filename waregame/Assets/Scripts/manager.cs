@@ -16,8 +16,8 @@ public class manager : MonoBehaviour
   public bool BossTimerSet;
   public float timePassed;
   public Animator Ani; //Animator
-private bool isworking;
-  private bool iswatching;
+public bool isworking;
+  public bool iswatching;
 
     // Start is called before the first frame update
     void Start()
