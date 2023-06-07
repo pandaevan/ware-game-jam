@@ -7372,13 +7372,11 @@ MonoBehaviour:
   currentboredom: 0
   attentionspan: 10
   bpm: 0
-  isworking: 1
-  iswatching: 0
   bored: {fileID: 1932305725}
   bossspawntimer: 0
   BossTimerSet: 0
   timePassed: 0
-  MC: {fileID: 1909334960}
+  Ani: {fileID: 0}
 --- !u!4 &1942309757
 Transform:
   m_ObjectHideFlags: 0
