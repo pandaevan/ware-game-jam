@@ -17,6 +17,7 @@ public class manager : MonoBehaviour
   public int bossspawntimer;
   public bool BossTimerSet;
   public float timePassed;
+  [SerializeField] public SpriteRenderer MC;
 
     // Start is called before the first frame update
     void Start()
@@ -65,6 +66,7 @@ public class manager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             isworking = !isworking;
+            MC.enabled = !isworking;
         }
     }
     public void bossrange()
