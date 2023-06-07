@@ -11,13 +11,13 @@ public class manager : MonoBehaviour
   public float currentboredom;
   public float attentionspan;
   public float bpm;
-  public bool isworking;
-  public bool iswatching;
   public Slider bored;
   public int bossspawntimer;
   public bool BossTimerSet;
   public float timePassed;
-  [SerializeField] public SpriteRenderer MC;
+  public Animator Ani; //Animator
+private bool isworking;
+  private bool iswatching;
 
     // Start is called before the first frame update
     void Start()
@@ -67,8 +67,16 @@ public class manager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            isworking = !isworking;
-            MC.enabled = !isworking;
+            if (isworking == true)
+            {
+                isworking = !isworking;
+                Ani.SetBool("IsWorking",false);
+            }
+            else if (isworking == false)
+            {
+                isworking = true;
+                Ani.SetBool("IsWorking",true);
+            }
         }
     }
     //randomly generates a number between a range
