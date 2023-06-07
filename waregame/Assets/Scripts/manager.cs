@@ -24,6 +24,7 @@ private bool isworking;
     {
       boredom = currentboredom;
       bored.minValue = boredom;
+      isworking = true;
     }
 
     // Update is called once per frame
