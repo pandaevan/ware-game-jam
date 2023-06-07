@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class manager : MonoBehaviour
 {
-  public float exposure;
+  [SerializeField] public float exposure;
   public float boredom;
   public float currentexposure;
   public float currentboredom;
@@ -15,7 +15,7 @@ public class manager : MonoBehaviour
   public bool iswatching;
   public Slider bored;
   public int bossspawntimer;
-  public bool bossactive;
+  public bool BossTimerSet;
   public float timePassed;
 
     // Start is called before the first frame update
@@ -27,27 +27,36 @@ public class manager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    { 
-      
-       timePassed += Time.deltaTime;
-    if(timePassed > bossspawntimer)
     {
-        timePassed = 0;
-        bruv();
-    } 
-      bossrange();
-      bored.value = currentboredom;
+        bored.value = currentboredom;
+        BossActiveResetTimer();
+        bossrange();
         IsWorkingToggle();
+        AttentionSpan();
+    }
+
+    private void AttentionSpan()
+    {
         if (isworking && !iswatching)
         {
-          currentboredom += attentionspan * Time.deltaTime;
+            currentboredom += attentionspan * Time.deltaTime;
         }
-       if (!isworking)
+        if (!isworking)
         {
-        if(currentboredom >= 0)
-      {
-        currentboredom -= attentionspan * Time.deltaTime;
-      }
+            if (currentboredom >= 0)
+            {
+                currentboredom -= attentionspan * Time.deltaTime;
+            }
+        }
+    }
+
+    private void BossActiveResetTimer()
+    {
+        timePassed += Time.deltaTime;
+        if (timePassed > bossspawntimer)
+        {
+            timePassed = 0;
+            bruv();
         }
     }
 
@@ -60,16 +69,16 @@ public class manager : MonoBehaviour
     }
     public void bossrange()
     {
-      if(bossactive == false)
+      if(BossTimerSet == false)
       {
         bossspawntimer = Random.Range(10,30);
-        bossactive = !bossactive;
-        Debug.Log(bossactive);
+        Debug.Log(BossTimerSet);
+        BossTimerSet = true;
       }
     }
           public void bruv()
       {
        Debug.Log("active");
-       bossactive = false;
+       BossTimerSet = false;
       }
 }
