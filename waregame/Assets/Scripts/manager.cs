@@ -36,6 +36,7 @@ public class manager : MonoBehaviour
         AttentionSpan();
     }
 
+// manages the attentionspan (how quickly the boredom meter fills)
     private void AttentionSpan()
     {
         if (isworking && !iswatching)
@@ -50,17 +51,18 @@ public class manager : MonoBehaviour
             }
         }
     }
-
+// sees if the time passed is the same as the random time and then executes the code
     private void BossActiveResetTimer()
     {
         timePassed += Time.deltaTime;
         if (timePassed > bossspawntimer)
         {
             timePassed = 0;
-            bruv();
+            BossTimerReset();
         }
     }
 
+// toggles the is working bool and also toggles the sprite of the player
     private void IsWorkingToggle()
     {
         if (Input.GetKeyDown(KeyCode.Tab))
@@ -69,6 +71,7 @@ public class manager : MonoBehaviour
             MC.enabled = !isworking;
         }
     }
+    //randomly generates a number between a range
     public void bossrange()
     {
       if(BossTimerSet == false)
@@ -78,7 +81,8 @@ public class manager : MonoBehaviour
         BossTimerSet = true;
       }
     }
-          public void bruv()
+    // works to reset the boss timer
+          public void BossTimerReset()
       {
        Debug.Log("active");
        BossTimerSet = false;
