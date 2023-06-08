@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Pause_Ui : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public manager manager;
+public void quit()
+{
+    Application.Quit();
+}
+public void Resume()
+{
+manager.pause.SetActive(false);
+manager.MainManager.SetActive(true);
+manager.BossMan.SetActive(true);
+manager.MainUi.SetActive(true);
+manager.Ani.enabled = true;
+}
+public void MainMenu()
+{
+    SceneManager.LoadScene(0);
+}
 }

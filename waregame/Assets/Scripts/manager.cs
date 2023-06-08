@@ -6,25 +6,38 @@ using UnityEngine.SceneManagement;
 
 public class manager : MonoBehaviour
 {
-  [SerializeField] public float exposure;
+ [Header("Values")]
+  public float exposure;
   public float boredom;
   public float currentexposure;
   public float currentboredom;
   public float attentionspan;
+  public float retentionspan;
+  public float exposurespeed;
+  public float oblivious;
   public float bpm;
-  public Slider bored;
   public int bossspawntimer;
-  public bool BossTimerSet;
   public float timePassed;
-  public Animator Ani; //Animator
-public bool isworking;
+  [Header("bools")]
+  public bool isworking;
   public bool iswatching;
-
+  public bool BossTimerSet;
+  public bool IsExposed;
+  [Header("References")]
+  public Slider bored;
+  public Slider exposed;
+  public Animator Ani; 
+  public GameObject pause;
+  public GameObject MainManager;
+  public GameObject BossMan;
+  public GameObject MainUi;
     // Start is called before the first frame update
     void Start()
     {
       boredom = currentboredom;
       bored.minValue = boredom;
+      exposure = currentexposure;
+      exposed.minValue = exposure;
       isworking = true;
     }
 
@@ -32,17 +45,33 @@ public bool isworking;
     void Update()
     {
         bored.value = currentboredom;
-        BossActiveResetTimer();
-        bossrange();
+        exposed.value = currentexposure;
+        //BossActiveResetTimer();
+        //bossrange();
         IsWorkingToggle();
         AttentionSpan();
         playerbored();
+        keybinds();
+        Exposed();
+        if(iswatching == true)
+        {
+            BossMan.SetActive(true);
+        }
+        else
+        {
+            BossMan.SetActive(false);
+        }
+        if(currentexposure == 100)
+        {
+            Ani.SetBool("IsDying" ,true);
+            Invoke("Deathsecuence", 3f);
+        }
     }
 
 // manages the attentionspan (how quickly the boredom meter fills)
     private void AttentionSpan()
     {
-        if (isworking && !iswatching)
+        if (isworking)
         {
             currentboredom += attentionspan * Time.deltaTime;
         }
@@ -50,8 +79,19 @@ public bool isworking;
         {
             if (currentboredom >= 0)
             {
-                currentboredom -= attentionspan * Time.deltaTime;
+                currentboredom -= retentionspan * Time.deltaTime;
             }
+        }
+    }
+    public void Exposed()
+    {
+        if(!isworking && iswatching)
+        {
+             currentexposure += exposurespeed * Time.deltaTime;
+        }
+        if(isworking && currentexposure >= 0)
+        {
+            currentexposure -= oblivious * Time.deltaTime;
         }
     }
 
@@ -110,12 +150,17 @@ public bool isworking;
       {
        Debug.Log("active");
        BossTimerSet = false;
+       iswatching = true;
       }
-      public void ketbinds()
+      public void keybinds()
       {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            Application.Quit();
+            pause.SetActive(true);
+            MainManager.SetActive(false);
+            BossMan.SetActive(false);
+            MainUi.SetActive(false);
+            Ani.enabled = false;
         }
       }
 }
