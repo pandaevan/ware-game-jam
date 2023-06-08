@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BossManager : MonoBehaviour
 {
+    public manager mandat;
     // Start is called before the first frame update
     void Start()
     {

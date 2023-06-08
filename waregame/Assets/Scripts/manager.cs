@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class manager : MonoBehaviour
 {
@@ -35,6 +36,7 @@ public bool isworking;
         bossrange();
         IsWorkingToggle();
         AttentionSpan();
+        playerbored();
     }
 
 // manages the attentionspan (how quickly the boredom meter fills)
@@ -51,6 +53,19 @@ public bool isworking;
                 currentboredom -= attentionspan * Time.deltaTime;
             }
         }
+    }
+
+    public void playerbored()
+    {
+        if(currentboredom >= 100)
+        {
+            Ani.SetBool("IsDying" ,true);
+            Invoke("Deathsecuence", 3f);
+        }
+    }
+    public void Deathsecuence()
+    {
+        SceneManager.LoadScene(2);
     }
 // sees if the time passed is the same as the random time and then executes the code
     private void BossActiveResetTimer()
