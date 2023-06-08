@@ -16,6 +16,7 @@ manager.MainManager.SetActive(true);
 manager.BossMan.SetActive(true);
 manager.MainUi.SetActive(true);
 manager.Ani.enabled = true;
+manager.bosstimer.SetActive(true);
 }
 public void MainMenu()
 {
