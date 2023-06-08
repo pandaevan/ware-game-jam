@@ -2009,6 +2009,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1683932351}
   - component: {fileID: 1683932350}
+  - component: {fileID: 1683932352}
   m_Layer: 0
   m_Name: angryboss
   m_TagString: Untagged
@@ -2083,6 +2084,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 3.632, y: 3.51, z: 44.082}
+--- !u!114 &1683932352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683932349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8630ad20dc89454c854797003e8dc71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mandat: {fileID: 1942309756}
 --- !u!1 &1705591950
 GameObject:
   m_ObjectHideFlags: 0
@@ -2511,7 +2525,7 @@ MonoBehaviour:
   boredom: 0
   currentexposure: 0
   currentboredom: 0
-  attentionspan: 10
+  attentionspan: 20
   bpm: 0
   bored: {fileID: 1932305725}
   bossspawntimer: 0

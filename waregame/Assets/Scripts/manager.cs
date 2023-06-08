@@ -111,4 +111,11 @@ public bool isworking;
        Debug.Log("active");
        BossTimerSet = false;
       }
+      public void ketbinds()
+      {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+      }
 }
