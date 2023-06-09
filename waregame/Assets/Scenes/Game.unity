@@ -771,7 +771,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 3.632, y: 3.51, z: -0.705}
 --- !u!1 &519071085
 GameObject:
@@ -1143,7 +1143,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &666941974
 GameObject:
@@ -2962,7 +2962,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 3.632, y: 3.51, z: 44.082}
 --- !u!1 &1693623399
 GameObject:
@@ -3091,58 +3091,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1705591950}
   m_CullTransparentMesh: 1
---- !u!1 &1729868459
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1729868461}
-  - component: {fileID: 1729868460}
-  m_Layer: 0
-  m_Name: bos manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1729868460
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1729868459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8630ad20dc89454c854797003e8dc71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpawnRange: 1
-  timePassed: 0
-  iswatching: 0
-  BossActiveSet: 0
-  mandat: {fileID: 1986762030}
-  Mana: {fileID: 1942309756}
-  BT: {fileID: 1986762029}
-  BM: {fileID: 1729868459}
---- !u!4 &1729868461
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1729868459}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.2515676, y: -1.8219881, z: 5.815563}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1752195092
 GameObject:
   m_ObjectHideFlags: 0
@@ -3799,20 +3747,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73e999efa54a79242aae9542bd157565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exposure: 0
-  boredom: 0
+  BossTimeMin: 5
+  BossTimeMax: 10
+  BossLengthMin: 0
+  BossLenghtMax: 0
+  BossActiveResetTimer: 0
   currentexposure: 0
   currentboredom: 0
   attentionspan: 10
   retentionspan: 5
   exposurespeed: 35
   oblivious: 5
-  bpm: 0
-  bossspawntimer: 1
-  timePassed: 0
+  bossspawntimer: 0
   isworking: 0
   iswatching: 0
-  BossTimerSet: 0
   IsExposed: 0
   bored: {fileID: 1932305725}
   exposed: {fileID: 519071087}
@@ -3932,58 +3880,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 3.632, y: 3.51, z: -0.705}
---- !u!1 &1986762029
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1986762031}
-  - component: {fileID: 1986762030}
-  m_Layer: 0
-  m_Name: Timer manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1986762030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1986762029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c3afe0628800aa429331b6815a6b96d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BM: {fileID: 1729868459}
-  bossspawntimer: 1
-  timePassed: 0
-  iswatching: 0
-  BossTimerSet: 0
-  Mana: {fileID: 1942309756}
---- !u!4 &1986762031
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1986762029}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.2515676, y: -1.8219881, z: 5.815563}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2002368689
 GameObject:
   m_ObjectHideFlags: 0

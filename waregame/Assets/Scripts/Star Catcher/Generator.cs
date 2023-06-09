@@ -27,7 +27,6 @@ public class Generator : MonoBehaviour
             StarPositions = new Vector3(RandomX,8,0);
             Create();
             yield return new WaitForSeconds(Delay);
-
         }
     }
 }

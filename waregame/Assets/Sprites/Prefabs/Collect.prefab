@@ -14,11 +14,11 @@ GameObject:
   - component: {fileID: 580628098905539166}
   - component: {fileID: 3436483314672363542}
   m_Layer: 0
-  m_Name: Stars (1)
+  m_Name: Collect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1174687310560839748
 Transform:
@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e40f23adb4eedc24a8bcf2eaa07bcc29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  play: Player
 --- !u!61 &3436483314672363542
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -155,7 +156,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
