@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Generator : MonoBehaviour
+public class GEN : MonoBehaviour
 {
     private int RandomX;
     [SerializeField] private int Delay;
