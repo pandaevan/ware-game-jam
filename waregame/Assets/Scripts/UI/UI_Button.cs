@@ -22,7 +22,10 @@ public class UI_Button : MonoBehaviour
     {
         SceneManager.LoadScene(5);
     }    
-
+        public void HighScore()
+    {
+        SceneManager.LoadScene(6);
+    }
         public void back()
     {
         SceneManager.LoadScene(0);

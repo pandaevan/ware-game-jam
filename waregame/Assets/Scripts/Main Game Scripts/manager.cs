@@ -49,7 +49,7 @@ public class manager : MonoBehaviour
         playerbored();
         keybinds();
         Exposed();
-        if(currentexposure == 100)
+        if(currentexposure >= 100)
         {
             Ani.SetBool("IsDying" ,true);
             Invoke("Deathsecuence", 3f);
@@ -116,7 +116,6 @@ public class manager : MonoBehaviour
         {
             pause.SetActive(true);
             MainManager.SetActive(false);
-            BossMan.SetActive(false);
             MainUi.SetActive(false);
             Ani.enabled = false;
         }
