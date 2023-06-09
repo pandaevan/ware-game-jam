@@ -31,7 +31,6 @@ public class manager : MonoBehaviour
   public GameObject pause;
   public GameObject MainManager;
   public GameObject BossMan;
-  public GameObject bosstimer;
   public GameObject MainUi;
     // Start is called before the first frame update
     void Start()
@@ -120,7 +119,6 @@ public class manager : MonoBehaviour
             BossMan.SetActive(false);
             MainUi.SetActive(false);
             Ani.enabled = false;
-            bosstimer.SetActive(false);
         }
         
       }
@@ -133,8 +131,10 @@ public class manager : MonoBehaviour
             //spawns boss
             yield return new WaitForSeconds(bossspawntimer);
             BossMan.SetActive(true);
+            iswatching = true;
             yield return new WaitForSeconds(BossActiveResetTimer);
             BossMan.SetActive(false);
+            iswatching = false;
         }
       }
 }

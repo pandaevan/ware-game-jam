@@ -784,7 +784,7 @@ GameObject:
   - component: {fileID: 519071086}
   - component: {fileID: 519071087}
   m_Layer: 5
-  m_Name: Slider (2)
+  m_Name: exposure
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3418,7 +3418,7 @@ GameObject:
   - component: {fileID: 1932305724}
   - component: {fileID: 1932305725}
   m_Layer: 5
-  m_Name: Slider (1)
+  m_Name: boredom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3747,6 +3747,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73e999efa54a79242aae9542bd157565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BossTimeMin: 10
+  BossTimeMax: 30
+  BossLengthMin: 5
+  BossLenghtMax: 10
+  BossActiveResetTimer: 0
+  currentexposure: 0
+  currentboredom: 0
+  attentionspan: 20
+  retentionspan: 10
+  exposurespeed: 10
+  oblivious: 5
+  bossspawntimer: 0
+  isworking: 0
+  iswatching: 0
+  IsExposed: 0
+  bored: {fileID: 1932305725}
+  exposed: {fileID: 519071087}
+  Ani: {fileID: 732957246}
+  pause: {fileID: 1693623399}
+  MainManager: {fileID: 1942309755}
+  BossMan: {fileID: 1683932349}
+  MainUi: {fileID: 1833535380}
 --- !u!4 &1942309757
 Transform:
   m_ObjectHideFlags: 0
@@ -3774,6 +3796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64f3a1555803a5449b88204c9db9b1af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Score: 0
 --- !u!1 &1978070803
 GameObject:
   m_ObjectHideFlags: 0

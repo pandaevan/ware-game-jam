@@ -12,11 +12,10 @@ public void quit()
 public void Resume()
 {
 manager.pause.SetActive(false);
-manager.MainManager.SetActive(true);
+manager.MainManager.SetActive(false);
 manager.BossMan.SetActive(true);
 manager.MainUi.SetActive(true);
 manager.Ani.enabled = true;
-manager.bosstimer.SetActive(true);
 }
 public void MainMenu()
 {
