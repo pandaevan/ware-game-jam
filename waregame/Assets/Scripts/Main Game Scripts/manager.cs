@@ -6,22 +6,23 @@ using UnityEngine.SceneManagement;
 
 public class manager : MonoBehaviour
 {
+ [Header("Boss Spawn Time")]
+ public int BossTimeMin;
+ public int BossTimeMax;
+ public int BossLengthMin;
+ public int BossLenghtMax; 
+ public int BossActiveResetTimer;
  [Header("Values")]
-  public float exposure;
-  public float boredom;
   public float currentexposure;
   public float currentboredom;
   public float attentionspan;
   public float retentionspan;
   public float exposurespeed;
   public float oblivious;
-  public float bpm;
   public int bossspawntimer;
-  public float timePassed;
   [Header("bools")]
   public bool isworking;
   public bool iswatching;
-  public bool BossTimerSet;
   public bool IsExposed;
   [Header("References")]
   public Slider bored;
@@ -35,11 +36,8 @@ public class manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      boredom = currentboredom;
-      bored.minValue = boredom;
-      exposure = currentexposure;
-      exposed.minValue = exposure;
       isworking = true;
+      StartCoroutine(Bossloop());
     }
 
     // Update is called once per frame
@@ -47,28 +45,17 @@ public class manager : MonoBehaviour
     {
         bored.value = currentboredom;
         exposed.value = currentexposure;
-        //BossActiveResetTimer();
-        //bossrange();
         IsWorkingToggle();
         AttentionSpan();
         playerbored();
         keybinds();
         Exposed();
-        if(iswatching == true)
-        {
-            BossMan.SetActive(true);
-        }
-        else
-        {
-            BossMan.SetActive(false);
-        }
         if(currentexposure == 100)
         {
             Ani.SetBool("IsDying" ,true);
             Invoke("Deathsecuence", 3f);
         }
     }
-
 // manages the attentionspan (how quickly the boredom meter fills)
     private void AttentionSpan()
     {
@@ -95,7 +82,6 @@ public class manager : MonoBehaviour
             currentexposure -= oblivious * Time.deltaTime;
         }
     }
-
     public void playerbored()
     {
         if(currentboredom >= 100)
@@ -108,17 +94,6 @@ public class manager : MonoBehaviour
     {
         SceneManager.LoadScene(2);
     }
-// sees if the time passed is the same as the random time and then executes the code
-    private void BossActiveResetTimer()
-    {
-        timePassed += Time.deltaTime;
-        if (timePassed > bossspawntimer)
-        {
-            timePassed = 0;
-            BossTimerReset();
-        }
-    }
-
 // toggles the is working bool and also toggles the sprite of the player
     private void IsWorkingToggle()
     {
@@ -136,23 +111,6 @@ public class manager : MonoBehaviour
             }
         }
     }
-    //randomly generates a number between a range
-    public void bossrange()
-    {
-      if(BossTimerSet == false)
-      {
-        bossspawntimer = Random.Range(10,30);
-        Debug.Log(BossTimerSet);
-        BossTimerSet = true;
-      }
-    }
-    // works to reset the boss timer
-          public void BossTimerReset()
-      {
-       Debug.Log("active");
-       BossTimerSet = false;
-       iswatching = true;
-      }
       public void keybinds()
       {
         if(Input.GetKeyDown(KeyCode.Escape))
@@ -163,6 +121,20 @@ public class manager : MonoBehaviour
             MainUi.SetActive(false);
             Ani.enabled = false;
             bosstimer.SetActive(false);
+        }
+        
+      }
+      IEnumerator Bossloop()
+      {
+        while(true)
+        {
+            bossspawntimer = Random.Range(BossTimeMin , BossTimeMax);
+            BossActiveResetTimer = Random.Range(BossLengthMin , BossLenghtMax);
+            //spawns boss
+            yield return new WaitForSeconds(bossspawntimer);
+            BossMan.SetActive(true);
+            yield return new WaitForSeconds(BossActiveResetTimer);
+            BossMan.SetActive(false);
         }
       }
 }
