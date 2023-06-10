@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Animations;
 
 public class manager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class manager : MonoBehaviour
  public Animator Boss_1;
  public Animator Boss_2;
  public Animator Special_Boss;
+ public int trio;
  [Header("Boss Spawn Time")]
  public int BossTimeMin;
  public int BossTimeMax;
@@ -131,13 +133,35 @@ public class manager : MonoBehaviour
         {
             bossspawntimer = Random.Range(BossTimeMin , BossTimeMax);
             BossActiveResetTimer = Random.Range(BossLengthMin , BossLenghtMax);
+            trio = Random.Range(1,3);
             //spawns boss
             yield return new WaitForSeconds(bossspawntimer);
-            BossMan.SetActive(true);
-            iswatching = true;
+            if(trio == 1)
+            {
+                Boss_1.SetBool("IsHere" , true);
+            }
+            else if(trio == 2)
+            {
+                Boss_2.SetBool("Approach" , true);
+            }
+            else if(trio == 3)
+            {
+                Special_Boss.SetBool("WalkingIn" , true);
+            }
             yield return new WaitForSeconds(BossActiveResetTimer);
+            if(trio == 1)
+            {
+                Boss_1.SetBool("Stop" , false);
+            }
+            else if(trio == 2)
+            {
+                Boss_2.SetBool("Approach" , false);
+            }
+            else if(trio == 3)
+            {
+                Special_Boss.SetBool("WalkingIn" , false);
+            }
             BossMan.SetActive(false);
-            iswatching = false;
         }
       }
 }
