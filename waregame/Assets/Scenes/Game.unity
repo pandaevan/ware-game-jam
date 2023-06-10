@@ -3726,6 +3726,7 @@ MonoBehaviour:
   Boss_1: {fileID: 0}
   Boss_2: {fileID: 0}
   Special_Boss: {fileID: 0}
+  trio: 0
   BossTimeMin: 10
   BossTimeMax: 30
   BossLengthMin: 5

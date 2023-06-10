@@ -12,6 +12,10 @@ public class manager : MonoBehaviour
  public Animator Boss_2;
  public Animator Special_Boss;
  public int trio;
+ [Header("Boss_Animation")]
+ public AnimationScript AnimScript;
+ public AnimationScript AnimScript_1;
+ public AnimationScript AnimScript_2;
  [Header("Boss Spawn Time")]
  public int BossTimeMin;
  public int BossTimeMax;
@@ -139,14 +143,26 @@ public class manager : MonoBehaviour
             if(trio == 1)
             {
                 Boss_1.SetBool("IsHere" , true);
+                if (AnimScript.Finished_1 == true)
+                {
+                    //BOSSS STARTS STARTIN AT YYAAAAAA
+                }
             }
             else if(trio == 2)
             {
                 Boss_2.SetBool("Approach" , true);
+                if (AnimScript.Finished_2 == true)
+                {
+                    //boss
+                }
             }
             else if(trio == 3)
             {
                 Special_Boss.SetBool("WalkingIn" , true);
+                if (AnimScript.Finished_3 == true)
+                {
+                    //boss
+                }
             }
             yield return new WaitForSeconds(BossActiveResetTimer);
             if(trio == 1)
