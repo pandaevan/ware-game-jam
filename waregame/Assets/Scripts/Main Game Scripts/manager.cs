@@ -6,10 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class manager : MonoBehaviour
 {
- [Header("Bosses")]
- public GameObject Boss_1;
- public GameObject Boss_2;
- public GameObject Special_Boss;
  [Header("Boss Spawn Time")]
  public int BossTimeMin;
  public int BossTimeMax;
