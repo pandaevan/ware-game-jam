@@ -394,7 +394,7 @@ AnimationClip:
   - time: 0.75
     functionName: AniDelay_1
     data: 
-    objectReferenceParameter: {fileID: 0}
+    objectReferenceParameter: {fileID: 11500000, guid: 73e999efa54a79242aae9542bd157565, type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

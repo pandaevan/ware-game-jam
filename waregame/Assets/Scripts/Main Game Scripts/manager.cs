@@ -13,9 +13,9 @@ public class manager : MonoBehaviour
  public Animator Special_Boss;
  public int trio;
  [Header("Boss_Animation")]
- public AnimationScript AnimScript;
- public AnimationScript AnimScript_1;
- public AnimationScript AnimScript_2;
+public animation AnimScript;
+public animation AnimScript_1;
+public animation AnimScript_2;
  [Header("Boss Spawn Time")]
  public int BossTimeMin;
  public int BossTimeMax;
@@ -40,7 +40,6 @@ public class manager : MonoBehaviour
   public Animator Ani; 
   public GameObject pause;
   public GameObject MainManager;
-  public GameObject BossMan;
   public GameObject MainUi;
     // Start is called before the first frame update
     void Start()
@@ -48,7 +47,6 @@ public class manager : MonoBehaviour
       isworking = true;
       StartCoroutine(Bossloop());
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -137,47 +135,57 @@ public class manager : MonoBehaviour
         {
             bossspawntimer = Random.Range(BossTimeMin , BossTimeMax);
             BossActiveResetTimer = Random.Range(BossLengthMin , BossLenghtMax);
-            trio = Random.Range(1,3);
+            trio = Random.Range(1,3); Debug.Log(trio);
             //spawns boss
             yield return new WaitForSeconds(bossspawntimer);
-            if(trio == 1)
+            if(trio == 1 && Boss_1.enabled == true)
             {
+                Debug.Log("watch");
                 Boss_1.SetBool("IsHere" , true);
                 if (AnimScript.Finished_1 == true)
                 {
-                    //BOSSS STARTS STARTIN AT YYAAAAAA
+                    Debug.Log("watch");
                 }
             }
-            else if(trio == 2)
+            if(trio == 2)
             {
                 Boss_2.SetBool("Approach" , true);
-                if (AnimScript.Finished_2 == true)
+                if (AnimScript_1.Finished_2 == true)
                 {
-                    //boss
+                   Debug.Log("watch");
                 }
             }
-            else if(trio == 3)
+            if(trio == 3)
             {
                 Special_Boss.SetBool("WalkingIn" , true);
-                if (AnimScript.Finished_3 == true)
+                if (AnimScript_2.Finished_3 == true)
                 {
-                    //boss
+                    Debug.Log("watch");
                 }
             }
             yield return new WaitForSeconds(BossActiveResetTimer);
             if(trio == 1)
             {
-                Boss_1.SetBool("Stop" , false);
+                AnimScript.Finished_1 = false;
+                Boss_1.SetBool("IsHere", false);
+                Boss_1.SetBool("Stops" , true);
             }
-            else if(trio == 2)
+            if(trio == 2)
             {
-                Boss_2.SetBool("Approach" , false);
+                Boss_2.SetBool("Approach", false);
+                AnimScript_1.Finished_2 = false;
+                Boss_2.SetBool("Boss_Leave" , true);
             }
-            else if(trio == 3)
+            if(trio == 3)
             {
-                Special_Boss.SetBool("WalkingIn" , false);
+                Special_Boss.SetBool("WalkingIn", false);
+                AnimScript_2.Finished_3 = false;
+                Special_Boss.SetBool("Leave" , true);
             }
-            BossMan.SetActive(false);
+            yield return new WaitForSeconds(1);
+            Boss_1.SetBool("Stops" , false);
+            Boss_2.SetBool("Boss_Leave" , false);
+            Special_Boss.SetBool("Leave", false);
         }
       }
 }

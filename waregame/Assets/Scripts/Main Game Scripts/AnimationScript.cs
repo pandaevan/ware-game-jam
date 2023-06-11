@@ -4,29 +4,21 @@ using UnityEngine;
 
 public class AnimationScript : MonoBehaviour
 {
+    public manager Manager;
     public bool Finished_1;
     public bool Finished_2;
     public bool Finished_3;
 
     void Start()
     {
+        Debug.Log("no watch");
         Finished_1 = false;
-        Finished_2 = false;
-        Finished_3 = false;
     }
     public void AniDelay()
     {
         Finished_1 = true;
-    }
-
-    public void AniDelay_1()
-    {
-        Finished_2 = true;
-    }
-
-    public void AniDelay_2()
-    {
-        Finished_3 = true;
+        Debug.Log("watch");
+        Manager.iswatching = true;
     }
 
 }
