@@ -23,13 +23,13 @@ void Start()
 
 IEnumerator Transition()
 {
-    yield return new WaitForSeconds(7);
+    yield return new WaitForSeconds(8);
     T.SetActive(true);
     yield return new WaitForSeconds(0.3f);
     T.SetActive(false);
     One.SetActive(false);
     Two.SetActive(true);
-    yield return new WaitForSeconds(6);
+    yield return new WaitForSeconds(7);
     T.SetActive(true);
     yield return new WaitForSeconds(0.3f);
     T.SetActive(false);
