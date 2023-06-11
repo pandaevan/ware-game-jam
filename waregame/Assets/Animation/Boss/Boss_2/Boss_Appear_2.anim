@@ -392,9 +392,9 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.75
-    functionName: boss1ani
+    functionName: boss1ani2
     data: 
-    objectReferenceParameter: {fileID: 11500000, guid: 73e999efa54a79242aae9542bd157565, type: 3}
+    objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

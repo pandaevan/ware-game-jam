@@ -5,7 +5,7 @@ using UnityEngine;
 public class Boss_3_anim : MonoBehaviour
 {
 public bool Finished;
-public void boss1ani()
+public void boss1ani3()
 {
     Finished = true;
 }

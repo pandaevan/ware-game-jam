@@ -5,7 +5,7 @@ using UnityEngine;
 public class Boss_2_Script : MonoBehaviour
 {
     public  bool Finished;
-public void boss1ani()
+public void boss1ani2()
 {
     Finished = true;
 }

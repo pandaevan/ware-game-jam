@@ -127,59 +127,63 @@ public Boss_3_anim AnimScript_2;
             MainUi.SetActive(false);
             Ani.enabled = false;
         }
-        
+
       }
+        public void bubby()
+        {
+            iswatching = true;
+        }
       IEnumerator Bossloop()
       {
         while(true)
         {
             bossspawntimer = Random.Range(BossTimeMin , BossTimeMax);
             BossActiveResetTimer = Random.Range(BossLengthMin , BossLenghtMax);
-            trio = Random.Range(1,3); Debug.Log(trio);
+            trio = Random.Range(1,4); Debug.Log(trio);
             //spawns boss
             yield return new WaitForSeconds(bossspawntimer);
-            if(trio == 1 && Boss_1.enabled == true)
+            if(trio == 1)
             {
-                Debug.Log("watch");
+                
                 Boss_1.SetBool("IsHere" , true);
-                if (AnimScript.Finished == true)
+                if (Boss_1 == true)
                 {
-                    Debug.Log("watch");
+                    Invoke("bubby", 1);
                 }
             }
             if(trio == 2)
             {
                 Boss_2.SetBool("Approach" , true);
-                if (AnimScript_1.Finished == true)
+                if (Boss_2 == true)
                 {
-                   Debug.Log("watch");
+                    Invoke("bubby", 1);
                 }
             }
             if(trio == 3)
             {
                 Special_Boss.SetBool("WalkingIn" , true);
-                if (AnimScript_2.Finished == true)
+                if (Special_Boss == true)
                 {
-                    Debug.Log("watch");
+                    Invoke("bubby", 1);
                 }
             }
             yield return new WaitForSeconds(BossActiveResetTimer);
             if(trio == 1)
             {
-                AnimScript.Finished = false;
+                iswatching = false;
                 Boss_1.SetBool("IsHere", false);
                 Boss_1.SetBool("Stops" , true);
             }
             if(trio == 2)
             {
+                iswatching = false;
                 Boss_2.SetBool("Approach", false);
-                AnimScript_1.Finished = false;
                 Boss_2.SetBool("Boss_Leave" , true);
             }
             if(trio == 3)
             {
+                iswatching = false;
                 Special_Boss.SetBool("WalkingIn", false);
-                AnimScript_2.Finished = false;
                 Special_Boss.SetBool("Leave" , true);
             }
             yield return new WaitForSeconds(1);
