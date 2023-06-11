@@ -23,6 +23,7 @@ public Boss_3_anim AnimScript_2;
  public int BossLenghtMax; 
  public int BossActiveResetTimer;
  [Header("Values")]
+ public float DifficultyMult;
   public float currentexposure;
   public float currentboredom;
   public float attentionspan;
@@ -62,6 +63,7 @@ public Boss_3_anim AnimScript_2;
             Ani.SetBool("IsDying" ,true);
             Invoke("Deathsecuence", 3f);
         }
+        DifficultyMult += Time.deltaTime * 0.01f;;
     }
 // manages the attentionspan (how quickly the boredom meter fills)
     private void AttentionSpan()
