@@ -12,9 +12,9 @@ public void quit()
 public void Resume()
 {
 manager.pause.SetActive(false);
-manager.MainManager.SetActive(true);
 manager.MainUi.SetActive(true);
 manager.Ani.enabled = true;
+Time.timeScale = 1;
 }
 public void MainMenu()
 {

@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class HowToPlay : MonoBehaviour
 {
-public GameObject Page_1;
-public GameObject Page_2;
-public GameObject Page_3;
-public GameObject Page_4;
-
-
+    // Start is called before the first frame update
 
 }
