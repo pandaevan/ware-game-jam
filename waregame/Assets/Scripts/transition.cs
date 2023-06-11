@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class transition : MonoBehaviour
 {
@@ -34,5 +35,10 @@ IEnumerator Transition()
     T.SetActive(false);
     Two.SetActive(false);
     Three.SetActive(true);
+    yield return new WaitForSeconds(8);
+    T.SetActive(true);
+    yield return new WaitForSeconds(0.3f);
+    SceneManager.LoadScene(1);
+
 }
 }
