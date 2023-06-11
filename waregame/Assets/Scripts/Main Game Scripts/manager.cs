@@ -46,7 +46,10 @@ public Boss_3_anim AnimScript_2;
     void Start()
     {
       isworking = true;
-      StartCoroutine(Bossloop());
+    }
+     void Awake()
+    {
+                StartCoroutine(Bossloop());
     }
     // Update is called once per frame
     void Update()
@@ -122,13 +125,14 @@ public Boss_3_anim AnimScript_2;
     }
       public void keybinds()
       {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape) && iswatching == false)
         {
             pause.SetActive(true);
-            MainManager.SetActive(false);
             MainUi.SetActive(false);
             Ani.enabled = false;
+            Time.timeScale = 0;
         }
+        
 
       }
         public void bubby()
