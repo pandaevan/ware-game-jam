@@ -2,23 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimationScript : MonoBehaviour
+public class AnimationScript2 : MonoBehaviour
 {
     public manager Manager;
-    public bool Finished_1;
-    public bool Finished_2;
     public bool Finished_3;
 
     void Start()
     {
         Debug.Log("no watch");
-        Finished_1 = false;
+        Finished_3 = false;
     }
-    public void AniDelay()
+    public void AniDelay_2()
     {
-        Finished_1 = true;
+        Finished_3 = true;
         Debug.Log("watch");
         Manager.iswatching = true;
     }
-
 }
