@@ -1739,7 +1739,7 @@ Transform:
   m_GameObject: {fileID: 928180611}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.026, y: 0.139, z: 0}
-  m_LocalScale: {x: 0.33871606, y: 0.51465786, z: 1}
+  m_LocalScale: {x: 0.3387161, y: 0.51465786, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1372266649}
@@ -2396,6 +2396,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1372266649}
   - component: {fileID: 1372266650}
+  - component: {fileID: 1372266651}
   m_Layer: 0
   m_Name: clock
   m_TagString: Untagged
@@ -2472,6 +2473,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1372266651
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372266648}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a7e6891fd28a3684bb9bd536466c4b71, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1390057171
 GameObject:
   m_ObjectHideFlags: 0
@@ -3626,7 +3648,7 @@ Transform:
   m_GameObject: {fileID: 1937323243}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.027, y: 0.084, z: 0}
-  m_LocalScale: {x: 0.5643512, y: 0.32983136, z: 1}
+  m_LocalScale: {x: 0.5643512, y: 0.3298314, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1372266649}
