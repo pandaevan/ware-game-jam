@@ -813,13 +813,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 466309407}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 664b106f5ab8a9c44a8386f5d479accc, type: 3}
+  m_Script: {fileID: 11500000, guid: 878273deea8e1f3419e8105414f8007d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Manager: {fileID: 0}
-  Finished_1: 0
-  Finished_2: 0
-  Finished_3: 0
+  Finished: 0
 --- !u!1 &519071085
 GameObject:
   m_ObjectHideFlags: 0
@@ -3044,14 +3041,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1683932349}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa0ee4174d518684993020a142fe3939, type: 3}
+  m_Script: {fileID: 11500000, guid: 44278fa7de81679409cd5eb5929573ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Manager: {fileID: 1942309756}
-  active: 0
-  Finished_1: 1
-  Finished_2: 0
-  Finished_3: 0
+  Finished: 0
 --- !u!1 &1693623399
 GameObject:
   m_ObjectHideFlags: 0
@@ -3763,8 +3756,8 @@ MonoBehaviour:
   Special_Boss: {fileID: 466309410}
   trio: 0
   AnimScript: {fileID: 1683932353}
-  AnimScript_1: {fileID: 0}
-  AnimScript_2: {fileID: 0}
+  AnimScript_1: {fileID: 1978070807}
+  AnimScript_2: {fileID: 466309411}
   BossTimeMin: 10
   BossTimeMax: 30
   BossLengthMin: 5
@@ -3942,13 +3935,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1978070803}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 664b106f5ab8a9c44a8386f5d479accc, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c83840db6887c34ea73d9d26c718a14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Manager: {fileID: 0}
-  Finished_1: 0
-  Finished_2: 0
-  Finished_3: 0
+  Finished: 0
 --- !u!1 &2002368689
 GameObject:
   m_ObjectHideFlags: 0
