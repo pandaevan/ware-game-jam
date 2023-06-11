@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Highscore.unity
     guid: d563f99386c5ccb448700f6e6ff40428
+  - enabled: 1
+    path: Assets/Scenes/CutScene.unity
+    guid: 2f42b3477d9dc504aa53029a2e379f74
   m_configObjects: {}

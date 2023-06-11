@@ -4,6 +4,27 @@ using UnityEngine;
 
 public class HowToPlay : MonoBehaviour
 {
-    // Start is called before the first frame update
-
+    public GameObject menu;
+    public GameObject menu1;
+    public GameObject next;
+public void main()
+{
+    menu1.SetActive(true);
+    menu.SetActive(false);
+}
+public void main1()
+{
+    menu.SetActive(true);
+    menu1.SetActive(false);
+}
+public void main2()
+{
+    next.SetActive(true);
+    menu1.SetActive(false);
+}
+public void main3()
+{
+    next.SetActive(false);
+    menu1.SetActive(true);
+}
 }

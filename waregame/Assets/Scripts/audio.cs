@@ -7,7 +7,7 @@ public class audio : MonoBehaviour
 {
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == "Game")
+        if (SceneManager.GetActiveScene().name == "CutScene")
         {
         Destroy(gameObject);
         }

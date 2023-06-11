@@ -7,7 +7,7 @@ public class UI_Button : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(7);
     }
         public void credits()
     {

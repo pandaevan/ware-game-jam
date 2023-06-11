@@ -35,6 +35,10 @@ public Boss_3_anim AnimScript_2;
   public bool isworking;
   public bool iswatching;
   public bool IsExposed;
+  public bool difficultjump;
+  public bool difficultjump2;
+  public bool difficultjump3;
+  public bool difficultjump4;
   [Header("References")]
   public Slider bored;
   public Slider exposed;
@@ -66,7 +70,51 @@ public Boss_3_anim AnimScript_2;
             Ani.SetBool("IsDying" ,true);
             Invoke("Deathsecuence", 3f);
         }
-        DifficultyMult += Time.deltaTime * 0.01f;;
+    }
+    public void FixedUpdate() 
+    {
+        if(DifficultyMult <= .4 )
+        DifficultyMult += Time.deltaTime * 0.0005f;
+        if(DifficultyMult >= .1 && difficultjump == false)
+        {
+            BossTimeMin = 9;
+            BossTimeMax = 25;
+            BossLengthMin = 8;
+            BossLenghtMax = 14; 
+            difficultjump = true;
+            attentionspan =22;
+            retentionspan =14;
+            exposurespeed =15 ;
+            oblivious =9;
+        }
+                if(DifficultyMult >= .2 && difficultjump2 == false)
+        {
+            BossTimeMin = 8;
+            BossTimeMax = 20;
+            BossLengthMin = 10;
+            BossLenghtMax = 16; 
+            difficultjump2 = true;
+            attentionspan =23;
+            retentionspan =13;
+            exposurespeed =16 ;
+            oblivious =8;
+        }
+                if(DifficultyMult >= .3 && difficultjump3 == false)
+        {
+            BossTimeMin = 7;
+            BossTimeMax = 15;
+            BossLengthMin = 12;
+            BossLenghtMax = 18; 
+            difficultjump3 = true;
+        }
+                if(DifficultyMult >= .4 && difficultjump4 == false)
+        {
+            BossTimeMin = 7;
+            BossTimeMax = 14;
+            BossLengthMin = 14;
+            BossLenghtMax = 20; 
+            difficultjump4 = true;
+        }
     }
 // manages the attentionspan (how quickly the boredom meter fills)
     private void AttentionSpan()
@@ -89,7 +137,7 @@ public Boss_3_anim AnimScript_2;
         {
              currentexposure += exposurespeed * Time.deltaTime;
         }
-        if(isworking && currentexposure >= 0)
+        if(isworking && !iswatching && currentexposure >= 0)
         {
             currentexposure -= oblivious * Time.deltaTime;
         }
@@ -125,7 +173,7 @@ public Boss_3_anim AnimScript_2;
     }
       public void keybinds()
       {
-        if(Input.GetKeyDown(KeyCode.Escape) && iswatching == false)
+        if(Input.GetKeyDown(KeyCode.Escape))
         {
             pause.SetActive(true);
             MainUi.SetActive(false);
