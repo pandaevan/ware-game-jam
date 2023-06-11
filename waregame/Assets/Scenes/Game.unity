@@ -816,6 +816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 664b106f5ab8a9c44a8386f5d479accc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Manager: {fileID: 0}
   Finished_1: 0
   Finished_2: 0
   Finished_3: 0
@@ -3043,10 +3044,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1683932349}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 664b106f5ab8a9c44a8386f5d479accc, type: 3}
+  m_Script: {fileID: 11500000, guid: aa0ee4174d518684993020a142fe3939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Finished_1: 0
+  Manager: {fileID: 1942309756}
+  active: 0
+  Finished_1: 1
   Finished_2: 0
   Finished_3: 0
 --- !u!1 &1693623399
@@ -3742,7 +3745,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1942309756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3755,13 +3758,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73e999efa54a79242aae9542bd157565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Boss_1: {fileID: 0}
-  Boss_2: {fileID: 0}
-  Special_Boss: {fileID: 0}
+  Boss_1: {fileID: 1683932352}
+  Boss_2: {fileID: 1978070806}
+  Special_Boss: {fileID: 466309410}
   trio: 0
   AnimScript: {fileID: 1683932353}
-  AnimScript_1: {fileID: 1978070807}
-  AnimScript_2: {fileID: 466309411}
+  AnimScript_1: {fileID: 0}
+  AnimScript_2: {fileID: 0}
   BossTimeMin: 10
   BossTimeMax: 30
   BossLengthMin: 5
@@ -3782,7 +3785,6 @@ MonoBehaviour:
   Ani: {fileID: 732957246}
   pause: {fileID: 1693623399}
   MainManager: {fileID: 1942309755}
-  BossMan: {fileID: 1683932349}
   MainUi: {fileID: 1833535380}
 --- !u!4 &1942309757
 Transform:
@@ -3943,6 +3945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 664b106f5ab8a9c44a8386f5d479accc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Manager: {fileID: 0}
   Finished_1: 0
   Finished_2: 0
   Finished_3: 0

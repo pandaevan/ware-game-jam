@@ -13,9 +13,9 @@ public class manager : MonoBehaviour
  public Animator Special_Boss;
  public int trio;
  [Header("Boss_Animation")]
- public AnimationScript AnimScript;
- public AnimationScript1 AnimScript_1;
- public AnimationScript2 AnimScript_2;
+public animation AnimScript;
+public animation AnimScript_1;
+public animation AnimScript_2;
  [Header("Boss Spawn Time")]
  public int BossTimeMin;
  public int BossTimeMax;
@@ -138,8 +138,9 @@ public class manager : MonoBehaviour
             trio = Random.Range(1,3); Debug.Log(trio);
             //spawns boss
             yield return new WaitForSeconds(bossspawntimer);
-            if(trio == 1)
+            if(trio == 1 && Boss_1.enabled == true)
             {
+                Debug.Log("watch");
                 Boss_1.SetBool("IsHere" , true);
                 if (AnimScript.Finished_1 == true)
                 {
